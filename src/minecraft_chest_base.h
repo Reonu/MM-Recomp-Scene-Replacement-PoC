@@ -1,0 +1,7 @@
+extern u64 minecraft_chest_base_Image_0_ci4[];
+extern u64 minecraft_chest_base_Image_0_pal_rgba16[];
+extern Vtx minecraft_chest_base_minecraft_chest_base_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx minecraft_chest_base_minecraft_chest_base_mesh_layer_Opaque_vtx_0[36];
+extern Gfx minecraft_chest_base_minecraft_chest_base_mesh_layer_Opaque_tri_0[];
+extern Gfx mat_minecraft_chest_base_Material_0_f3d_layerOpaque[];
+extern Gfx minecraft_chest_base[];

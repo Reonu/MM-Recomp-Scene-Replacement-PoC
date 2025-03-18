@@ -1,0 +1,11 @@
+extern Lights1 minecraft_chest_lid_Material_1_f3d_lights;
+extern u64 minecraft_chest_lid_Image_0_ci4[];
+extern u64 minecraft_chest_lid_Image_0_pal_rgba16[];
+extern Vtx minecraft_chest_lid_minecraft_chest_lid_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx minecraft_chest_lid_minecraft_chest_lid_mesh_layer_Opaque_vtx_0[32];
+extern Gfx minecraft_chest_lid_minecraft_chest_lid_mesh_layer_Opaque_tri_0[];
+extern Vtx minecraft_chest_lid_minecraft_chest_lid_mesh_layer_Opaque_vtx_1[40];
+extern Gfx minecraft_chest_lid_minecraft_chest_lid_mesh_layer_Opaque_tri_1[];
+extern Gfx mat_minecraft_chest_lid_Material_0_f3d_layerOpaque[];
+extern Gfx mat_minecraft_chest_lid_Material_1_f3d[];
+extern Gfx minecraft_chest_lid[];

@@ -1,0 +1,1 @@
+extern AnimationHeader minecraft_spiderMinecraft_spider_normalAnim;

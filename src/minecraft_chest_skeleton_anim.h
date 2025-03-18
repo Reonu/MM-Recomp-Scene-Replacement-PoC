@@ -1,0 +1,1 @@
+extern AnimationHeader minecraft_chest_skeletonRest_poseAnim;
