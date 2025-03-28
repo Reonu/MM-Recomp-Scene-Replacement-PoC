@@ -5,13 +5,13 @@
  * Header Default
 */
 #define LENGTH_MM_TEST_ROOM_0_HEADER00_OBJECTLIST 2
-#define LENGTH_MM_TEST_ROOM_0_HEADER00_ACTORLIST 3
+#define LENGTH_MM_TEST_ROOM_0_HEADER00_ACTORLIST 4
 SceneCmd mm_test_room_0_header00[] = {
     SCENE_CMD_ROOM_SHAPE(&mm_test_room_0_shapeHeader),
     SCENE_CMD_ECHO_SETTINGS(0x00),
     SCENE_CMD_ROOM_BEHAVIOR(ROOM_TYPE_DUNGEON, ROOM_ENV_DEFAULT, false, false, false, false),
     SCENE_CMD_SKYBOX_DISABLES(false, false),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 10),
+    SCENE_CMD_TIME_SETTINGS(255, 255, 3),
     SCENE_CMD_OBJECT_LIST(LENGTH_MM_TEST_ROOM_0_HEADER00_OBJECTLIST, mm_test_room_0_header00_objectList),
     SCENE_CMD_ACTOR_LIST(LENGTH_MM_TEST_ROOM_0_HEADER00_ACTORLIST, mm_test_room_0_header00_actorList),
     SCENE_CMD_END(),
@@ -26,8 +26,8 @@ ActorEntry mm_test_room_0_header00_actorList[LENGTH_MM_TEST_ROOM_0_HEADER00_ACTO
     // Treasure Chest
     {
         /* Actor ID   */ ACTOR_EN_BOX,
-        /* Position   */ { 109, -325, -124 },
-        /* Rotation   */ { SPAWN_ROT_FLAGS(0, 0x07), SPAWN_ROT_FLAGS(270, 1), SPAWN_ROT_FLAGS(0x0, 0x7F) },
+        /* Position   */ { 290, -325, -124 },
+        /* Rotation   */ { SPAWN_ROT_FLAGS(0, 0x07), SPAWN_ROT_FLAGS(90, 1), SPAWN_ROT_FLAGS(0x0, 0x7F) },
         /* Parameters */ (0x0000 | (0x59 << 5))
     },
 
@@ -45,6 +45,14 @@ ActorEntry mm_test_room_0_header00_actorList[LENGTH_MM_TEST_ROOM_0_HEADER00_ACTO
         /* Position   */ { 99, -325, -274 },
         /* Rotation   */ { SPAWN_ROT_FLAGS(0, 0x07), SPAWN_ROT_FLAGS(0, CS_ID_GLOBAL_END), SPAWN_ROT_FLAGS(0, 0x7F) },
         /* Parameters */ 0x0102
+    },
+
+    // (Golden) Skulltula
+    {
+        /* Actor ID   */ ACTOR_EN_SW,
+        /* Position   */ { 607, -307, -196 },
+        /* Rotation   */ { SPAWN_ROT_FLAGS(0, 0x07), SPAWN_ROT_FLAGS(0, CS_ID_GLOBAL_END), SPAWN_ROT_FLAGS(0, 0x7F) },
+        /* Parameters */ 0x0202
     },
 };
 
@@ -138,16 +146,6 @@ u64 mm_test_room_0_dl_water_still_y_ci4[] = {
 
 u64 mm_test_room_0_dl_water_still_y_pal_rgba16[] = {
 	0x2a3d21fd2a7d3afd, 0x32fd000000000000
-};
-
-u64 mm_test_room_0_dl_water_flow_y_ci4[] = {
-	0x0000000121000003, 0x0000000130000003, 0x0000000130000001, 0x0000000110000000, 0x3000000310000000, 0x3000000300000000, 0x1000000300000000, 0x1000000100000000, 
-	0x1000000100000000, 0x1300000000000000, 0x0300000000000000, 0x0200000000000000, 0x0200000001000001, 0x0300000001000002, 0x0300000001000002, 0x0100000301000002, 
-	
-};
-
-u64 mm_test_room_0_dl_water_flow_y_pal_rgba16[] = {
-	0x21fd2a3d327d2a7d, 
 };
 
 u64 mm_test_room_0_dl_jungle_leaves_y_ci8[] = {
@@ -7894,7 +7892,7 @@ Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_tri_20[]
 	gsSPEndDisplayList(),
 };
 
-Vtx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21[1988] = {
+Vtx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21[1980] = {
 	{{ {-535, -343, 285}, 0, {2560, 512}, {129, 0, 0, 255} }},
 	{{ {-535, -307, 285}, 0, {2560, 0}, {129, 0, 0, 255} }},
 	{{ {-535, -307, 108}, 0, {0, 0}, {129, 0, 0, 255} }},
@@ -8791,22 +8789,10 @@ Vtx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21[1
 	{{ {33, -343, -283}, 0, {0, 512}, {0, 0, 129, 255} }},
 	{{ {-3, -343, -283}, 0, {512, 512}, {0, 0, 129, 255} }},
 	{{ {-3, -325, -283}, 0, {512, 256}, {0, 0, 129, 255} }},
-	{{ {-3, -325, -247}, 0, {0, 256}, {129, 0, 0, 255} }},
-	{{ {-3, -343, -247}, 0, {0, 512}, {129, 0, 0, 255} }},
-	{{ {-3, -343, -212}, 0, {512, 512}, {129, 0, 0, 255} }},
-	{{ {-3, -325, -212}, 0, {512, 256}, {129, 0, 0, 255} }},
 	{{ {33, -325, -247}, 0, {0, 256}, {0, 0, 129, 255} }},
 	{{ {33, -343, -247}, 0, {0, 512}, {0, 0, 129, 255} }},
 	{{ {-3, -343, -247}, 0, {512, 512}, {0, 0, 129, 255} }},
 	{{ {-3, -325, -247}, 0, {512, 256}, {0, 0, 129, 255} }},
-	{{ {33, -325, -212}, 0, {512, 256}, {0, 0, 127, 255} }},
-	{{ {-3, -325, -212}, 0, {0, 256}, {0, 0, 127, 255} }},
-	{{ {-3, -343, -212}, 0, {0, 512}, {0, 0, 127, 255} }},
-	{{ {33, -343, -212}, 0, {512, 512}, {0, 0, 127, 255} }},
-	{{ {33, -325, -212}, 0, {512, 512}, {0, 129, 0, 255} }},
-	{{ {33, -325, -34}, 0, {512, -2048}, {0, 129, 0, 255} }},
-	{{ {-3, -325, -34}, 0, {0, -2048}, {0, 129, 0, 255} }},
-	{{ {-3, -325, -212}, 0, {0, 512}, {0, 129, 0, 255} }},
 	{{ {33, -307, -212}, 0, {512, 0}, {127, 0, 0, 255} }},
 	{{ {33, -307, -176}, 0, {0, 0}, {127, 0, 0, 255} }},
 	{{ {33, -325, -176}, 0, {0, 256}, {127, 0, 0, 255} }},
@@ -9883,6 +9869,10 @@ Vtx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21[1
 	{{ {494, -343, 37}, 0, {0, 512}, {0, 0, 129, 255} }},
 	{{ {459, -343, 37}, 0, {512, 512}, {0, 0, 129, 255} }},
 	{{ {459, -325, 37}, 0, {512, 256}, {0, 0, 129, 255} }},
+	{{ {-3, -343, -212}, 0, {512, 512}, {0, 0, 129, 255} }},
+	{{ {-3, -307, -212}, 0, {512, 0}, {0, 0, 129, 255} }},
+	{{ {33, -307, -212}, 0, {0, 0}, {0, 0, 129, 255} }},
+	{{ {33, -343, -212}, 0, {0, 512}, {0, 0, 129, 255} }},
 };
 
 Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_tri_21[] = {
@@ -10435,7 +10425,7 @@ Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_tri_21[]
 	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
 	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
 	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
-	gsSPVertex(mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21 + 1952, 32, 0),
+	gsSPVertex(mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21 + 1952, 28, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
 	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
@@ -10443,9 +10433,6 @@ Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_tri_21[]
 	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
 	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
 	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
-	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
-	gsSPVertex(mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Opaque_vtx_21 + 1984, 4, 0),
-	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
 
@@ -33475,44 +33462,6 @@ Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent_tri
 	gsSPEndDisplayList(),
 };
 
-Vtx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent_vtx_1[24] = {
-	{{ {-3, -343, -212}, 0, {0, 512}, {0, 0, 127, 255} }},
-	{{ {33, -311, -212}, 0, {512, 32}, {0, 0, 127, 255} }},
-	{{ {-3, -311, -212}, 0, {0, 32}, {0, 0, 127, 255} }},
-	{{ {33, -343, -212}, 0, {512, 512}, {0, 0, 127, 255} }},
-	{{ {-3, -343, -70}, 0, {512, 512}, {0, 0, 129, 255} }},
-	{{ {-3, -311, -70}, 0, {512, 32}, {0, 0, 129, 255} }},
-	{{ {33, -311, -70}, 0, {0, 32}, {0, 0, 129, 255} }},
-	{{ {33, -343, -70}, 0, {0, 512}, {0, 0, 129, 255} }},
-	{{ {33, -343, -176}, 0, {512, 512}, {129, 0, 0, 255} }},
-	{{ {33, -311, -176}, 0, {512, 32}, {129, 0, 0, 255} }},
-	{{ {33, -311, -212}, 0, {0, 32}, {129, 0, 0, 255} }},
-	{{ {33, -343, -212}, 0, {0, 512}, {129, 0, 0, 255} }},
-	{{ {33, -343, -141}, 0, {512, 512}, {129, 0, 0, 255} }},
-	{{ {33, -311, -141}, 0, {512, 32}, {129, 0, 0, 255} }},
-	{{ {33, -311, -176}, 0, {0, 32}, {129, 0, 0, 255} }},
-	{{ {33, -343, -176}, 0, {0, 512}, {129, 0, 0, 255} }},
-	{{ {33, -343, -105}, 0, {512, 512}, {129, 0, 0, 255} }},
-	{{ {33, -311, -105}, 0, {512, 32}, {129, 0, 0, 255} }},
-	{{ {33, -311, -141}, 0, {0, 32}, {129, 0, 0, 255} }},
-	{{ {33, -343, -141}, 0, {0, 512}, {129, 0, 0, 255} }},
-	{{ {33, -343, -70}, 0, {512, 512}, {129, 0, 0, 255} }},
-	{{ {33, -311, -70}, 0, {512, 32}, {129, 0, 0, 255} }},
-	{{ {33, -311, -105}, 0, {0, 32}, {129, 0, 0, 255} }},
-	{{ {33, -343, -105}, 0, {0, 512}, {129, 0, 0, 255} }},
-};
-
-Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent_tri_1[] = {
-	gsSPVertex(mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent_vtx_1 + 0, 24, 0),
-	gsSP2Triangles(0, 1, 2, 0, 0, 3, 1, 0),
-	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
-	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
-	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
-	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
-	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
-	gsSPEndDisplayList(),
-};
-
 Vtx mm_test_room_0_dl_vines_mesh_layer_Transparent_vtx_cull[8] = {
 	{{ {-47, 0, -382}, 0, {0, 0}, {0, 0, 0, 0} }},
 	{{ {-47, 155, -382}, 0, {0, 0}, {0, 0, 0, 0} }},
@@ -33657,25 +33606,6 @@ Gfx mat_mm_test_room_0_dl_water_still_001_f3d_layerTransparent[] = {
 	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadTLUTCmd(5, 4),
 	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, mm_test_room_0_dl_water_still_y_ci4),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadBlock(7, 0, 0, 63, 2048),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0),
-	gsDPSetTileSize(0, 0, 0, 60, 60),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_mm_test_room_0_dl_water_flow_001_f3d_layerTransparent[] = {
-	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_FOG | G_LIGHTING | G_SHADING_SMOOTH),
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0),
-	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_POINT | G_TT_RGBA16 | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
-	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_FOG_SHADE_A | G_RM_AA_ZB_XLU_SURF2),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetPrimColor(0, 0, 255, 255, 255, 128),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, mm_test_room_0_dl_water_flow_y_pal_rgba16),
-	gsDPSetTile(0, 0, 0, 256, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadTLUTCmd(5, 3),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, mm_test_room_0_dl_water_flow_y_ci4),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 63, 2048),
 	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0),
@@ -34098,8 +34028,6 @@ Gfx mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent[] =
 	gsSPCullDisplayList(0, 7),
 	gsSPDisplayList(mat_mm_test_room_0_dl_water_still_001_f3d_layerTransparent),
 	gsSPDisplayList(mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent_tri_0),
-	gsSPDisplayList(mat_mm_test_room_0_dl_water_flow_001_f3d_layerTransparent),
-	gsSPDisplayList(mm_test_room_0_dl_recomp3___5__58__8_to_42_319_18_mesh_layer_Transparent_tri_1),
 	gsSPEndDisplayList(),
 };
 

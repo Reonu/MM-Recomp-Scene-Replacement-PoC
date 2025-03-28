@@ -9,8 +9,10 @@
 #include "minecraft_chest_skeleton.h"
 #include "minecraft_chest_skeleton_anim.h"
 #include "wrench.h"
+#include "eztr_api.h"
+#include "message_data_fmt_nes.h"
 
-#define REPLACED_SCENE SCENE_CLOCKTOWER
+#define REPLACED_SCENE SCENE_KINSTA1
 //#define REPLACED_SCENE SCENE_INSIDETOWER
 
 // Populate this when you add more rooms
@@ -100,4 +102,20 @@ RECOMP_PATCH void GetItem_DrawOpa0Xlu1(PlayState* play, s16 drawId) {
     gSPDisplayList(POLY_OPA_DISP++, wrench);
 
     CLOSE_DISPS(play->state.gfxCtx);    
+}
+
+EZTR_ON_INIT void replace_msgs() {
+    EZTR_Basic_ReplaceText(
+        0x0059,
+        EZTR_STANDARD_TEXT_BOX_I,
+        1,
+        EZTR_ICON_RAZOR_SWORD,
+        EZTR_NO_VALUE,
+        EZTR_NO_VALUE,
+        EZTR_NO_VALUE,
+        true,
+        "You got|01 Modding Support|00! |BF",
+
+        NULL
+    );
 }

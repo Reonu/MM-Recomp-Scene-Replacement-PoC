@@ -89,16 +89,14 @@ EntranceEntry mm_test_scene_header00_entranceList[] = {
 
 EnvLightSettings mm_test_scene_header00_lightSettings[1] = {
     // Custom No. 1 Lighting
-    {
-        {   143,    65,    37 },   // Ambient Color
-        {    73,   -73,    73 },   // Diffuse0 Direction
-        {   219,   204,   194 },   // Diffuse0 Color
-        {   -73,    73,   -73 },   // Diffuse1 Direction
-        {   133,   113,    22 },   // Diffuse1 Color
-        {   196,   182,   175 },   // Fog Color
-        ((1 << 10) | 993),         // Blend Rate & Fog Near
-        12800,                     // Fog Far
-    },
+    { 0x5A, 0x41, 0x50, 0x45, 0x45, 0x45, 0x6E, 0x78, 0x78, 0xBB, 0xBB, 0xBB, 0x50, 0x5A, 0x32, 0x14, 0x1E, 0x0A,
+        0x07D4, 0x1A90 },
+        { 0x3C, 0x50, 0x70, 0x45, 0x45, 0x45, 0x64, 0x82, 0xFF, 0xBB, 0xBB, 0xBB, 0x32, 0x32, 0x64, 0x0A, 0x32, 0x46,
+        0x07AC, 0x3200 },
+        { 0x78, 0x5A, 0x00, 0x45, 0x45, 0x45, 0xFA, 0x87, 0x32, 0xBB, 0xBB, 0xBB, 0x1E, 0x1E, 0x3C, 0x1C, 0x14, 0x00,
+        0x07E1, 0x3200 },
+        { 0x28, 0x28, 0x46, 0x45, 0x45, 0x45, 0x14, 0x14, 0x23, 0xBB, 0xBB, 0xBB, 0x32, 0x32, 0x64, 0x00, 0x00, 0x1E,
+        0x07E0, 0x3200 },
 };
 
 Vec3s mm_test_scene_header00_pathwayList00[] = {
@@ -117,9 +115,18 @@ Vec3s mm_test_scene_header00_pathwayList01[] = {
     {   181,  -325,  -223 },
 };
 
-Path mm_test_scene_header00_pathway[2] = {
+Vec3s mm_test_scene_header00_pathwayList02[] = {
+    {   521,  -307,   -61 },
+    {   521,  -307,  -196 },
+    {   607,  -307,  -196 },
+    {   607,  -307,  -146 },
+    {   607,  -307,   -61 },
+};
+
+Path mm_test_scene_header00_pathway[3] = {
     { ARRAY_COUNTU(mm_test_scene_header00_pathwayList00), -1, -1, mm_test_scene_header00_pathwayList00 },
     { ARRAY_COUNTU(mm_test_scene_header00_pathwayList01), -1, -1, mm_test_scene_header00_pathwayList01 },
+    { ARRAY_COUNTU(mm_test_scene_header00_pathwayList02), -1, -1, mm_test_scene_header00_pathwayList02 },
 };
 
 AnimatedMatTexScrollParams mm_test_scene_header00_AnimatedMaterialTexScrollParams_00[] = {
