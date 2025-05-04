@@ -9,7 +9,7 @@
 #include "minecraft_chest_skeleton.h"
 #include "minecraft_chest_skeleton_anim.h"
 #include "wrench.h"
-#include "eztr_api.h"
+// #include "eztr_api.h"
 #include "message_data_fmt_nes.h"
 
 #define REPLACED_SCENE SCENE_KINSTA1
@@ -104,7 +104,9 @@ RECOMP_PATCH void GetItem_DrawOpa0Xlu1(PlayState* play, s16 drawId) {
     CLOSE_DISPS(play->state.gfxCtx);    
 }
 
-EZTR_ON_INIT void replace_msgs() {
+
+// Text replacement for the trailer
+/*EZTR_ON_INIT void replace_msgs() {
     EZTR_Basic_ReplaceText(
         0x0059,
         EZTR_STANDARD_TEXT_BOX_I,
@@ -118,4 +120,4 @@ EZTR_ON_INIT void replace_msgs() {
 
         NULL
     );
-}
+}*/
