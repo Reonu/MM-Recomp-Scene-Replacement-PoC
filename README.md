@@ -2,6 +2,8 @@
 
 This is an example scene replacement for Majora's Mask Recompiled.
 
+This is not finished nor throughly tested and may introduce bugs in its current state. 
+
 ### Building
 * First, run `make` (with an optional job count) to build the mod code itself.
 * Next, run the `RecompModTool` utility with `mod.toml` as the first argument and the build dir (`build` in the case of this template) as the second argument.
